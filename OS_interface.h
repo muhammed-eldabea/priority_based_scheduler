@@ -20,7 +20,7 @@ TASK_READY,TASK_WAITING,TASK_SUSPEND
 /************************ Function Defination *************************/
 
 void SOS_voidCreatTask(u8 Copy_u8Periority , void(*ptr)(void) ,u16 Copy_u8Peridicity, u8 Copy_u8FIRSTdelay ) ; 
-void SOS_voidStart(u8 Copy_firstdelayValue) ; 
+void SOS_voidStart(void) ; 
 void SOS_voidSetTaskState(u8 Copy_TaskID,u8 Copy_u8State) ; 
 
 

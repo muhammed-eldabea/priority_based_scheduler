@@ -20,10 +20,10 @@ typedef struct
 }Task_type; 
 
 
-
+/***********************Private Function ****************************/
  static void Schedular (void) ;  
  
-
+ static void  void_function(void)
 
 
 

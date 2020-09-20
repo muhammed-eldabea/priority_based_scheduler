@@ -116,17 +116,9 @@ SOS_SYSTEM_TASKS[indx].firstDelay-- ;
 
 
 
+} 
 }
 
-
-
-
-
-
-
-
-
-}
 
 
 void SOS_voidSetTaskState(u8 Copy_TaskID,u8 Copy_u8State) 
@@ -144,3 +136,34 @@ SOS_SYSTEM_TASKS[Copy_TaskID].state = Copy_u8State ;
 
 }
  
+void SOS_voidTaskSuspend( u8 Copy_u8TaskID) 
+{
+
+SOS_SYSTEM_TASKS[Copy_u8TaskID].state=TASK_SUSPEND ; 
+
+
+}
+
+
+
+void SOS_voidTaskResume(u8 Copy_u8TaskID) 
+{
+SOS_SYSTEM_TASKS[Copy_u8TaskID].state=TASK_READY ;
+
+}
+
+void SOS_voidTaskKill(u8 Copy_u8TaskID) 
+{
+SOS_SYSTEM_TASKS[Copy_u8TaskID].Fptr = NULL ;  
+/*assign the peridicity time  */ 
+SOS_SYSTEM_TASKS[Copy_u8TaskID].periodicity = 0 ; 
+/*insert the first delay value */
+SOS_SYSTEM_TASKS[Copy_u8TaskID].firstDelay = 0 ; 
+
+}
+
+
+static void  void_function(void) 
+{
+    asm("NOP") ; 
+}
